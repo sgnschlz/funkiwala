@@ -1,0 +1,55 @@
+.about__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid $nightriderdarkgrey;
+  border-bottom: 1px solid $white;
+  justify-items: center;
+  text-align: center;
+  padding: 3rem 0;
+
+  @include breakpoint-up(large) {
+    grid-template-columns: 340px 1fr;
+    align-items: center;
+    column-gap: 1.875rem;
+    text-align: left;
+  }
+
+  img {
+    height: 250px;
+    width: 340px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 2rem;
+  }
+
+  &:hover {
+    border-top: 1px solid $freespeechred;
+  }
+
+  &.first {
+    border-top: none;
+    &:hover {
+      border-top: none;
+    }
+  }
+
+  &.last {
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+#readMoreText {
+  display: none;
+}
+
+#readMoreText.openReadMore {
+  display: block;
+}
+
+.about__readmore {
+  cursor: pointer;
+}

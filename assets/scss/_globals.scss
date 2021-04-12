@@ -1,0 +1,113 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  color: $white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.3;
+  background: $darkblue; //#212121;#1e1c1c
+  overflow-x: hidden;
+}
+
+p {
+  text-transform: none;
+  color: $dimgrey;
+  font-size: 1rem;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $white;
+}
+
+div#topp {
+  padding-top: 3rem;
+}
+
+h1 {
+  color: $astrabeach;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+h2,
+h3 {
+  color: $white;
+  text-transform: capitalize;
+}
+
+h3:after,
+h2:after {
+  content: ".";
+  color: $flamered;
+}
+
+.container {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+// flexbox styles
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+  &-dir-col {
+    flex-direction: column;
+  }
+}
+
+//Visibility
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+//social icons
+.fa {
+  color: $neroblack;
+}
+
+a.scroll.top {
+  position: fixed;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  background-color: $nightriderdarkgrey;
+  color: white;
+  cursor: pointer;
+  padding: 7px;
+  font-size: 0.65rem;
+}

@@ -1,0 +1,349 @@
+/*--------------------------------------
+          Dropdown Menu
+ ----------------------------------*/
+ul.menu.menuo {
+  margin: 0;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0;
+}
+
+nav.navu {
+  background: $astrabeach;
+  padding: 0 0.9rem 0 4rem;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+  a {
+    color: $neroblack;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    &:hover {
+      color: $flamered;
+      transition: color 200ms ease-in-out;
+    }
+    &.active {
+      color: $flamered;
+    }
+  }
+}
+
+.menu,
+.submenu {
+  list-style-type: none;
+}
+.logo {
+  width: 13.35rem;
+  height: 1.75rem;
+}
+span.caret {
+  font-size: x-small;
+}
+
+i.fab.fa-instagram {
+  font-weight: 700;
+}
+
+li.item.items {
+  font-size: large;
+}
+li.caret {
+  white-space: nowrap;
+}
+
+/* Mobile menu */
+.menuo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuo li a {
+  display: block;
+  margin-right: 1rem;
+}
+
+.menuo li .items a {
+  padding: 0;
+}
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+.item.button {
+  order: 2;
+}
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+.active .item {
+  display: block;
+  padding: 0.4rem 0;
+}
+.button.secondary {
+  /* divider between buttons and menu links */
+  border-bottom: 1px #444 solid;
+}
+/* Submenu up from mobile screens */
+.submenu {
+  display: none;
+}
+.submenu-active .submenu {
+  display: block;
+  background: $astrabeach;
+  padding-left: 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.has-submenu i {
+  font-size: 12px;
+}
+.has-submenu > a::after {
+  display: none;
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  content: "\f078";
+  color: white;
+  padding-left: 5px;
+}
+.subitem a {
+  padding: 10px 15px;
+}
+.submenu-active {
+  background-color: $astrabeach;
+}
+
+/* Tablet menu */
+@media all and (min-width: 700px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+  .item.button {
+    // width: auto;
+    order: 1;
+    display: block;
+  }
+  .toggle {
+    flex: 1;
+    text-align: right;
+    order: 2;
+  }
+}
+/* Desktop menu */
+@media all and (max-width: 1399px) {
+  nav.navu {
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  ul.menu.menuo {
+    padding: 0.625rem;
+  }
+
+  .submenu-active .submenu {
+    border: 1px solid black;
+    box-shadow: black 0.1rem 0.1rem;
+  }
+
+  .submenu-active .submenu__albums,
+  .submenu-active .submenu__shop {
+    overflow-y: scroll;
+    height: 300px;
+  }
+
+  .subitem a {
+    padding: 5px 15px;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .menu {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+  .face {
+    margin-left: 4rem;
+  }
+  .logo {
+    order: 0;
+  }
+  .item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
+  .menuo li:nth-child(2),
+  .menuo li:nth-child(3),
+  .menuo li:nth-child(4),
+  .menuo li:nth-child(5),
+  .menuo li:nth-child(6),
+  .menuo li:nth-child(7),
+  .menuo li:nth-child(8) {
+    margin-right: 30px;
+  }
+  .button {
+    order: 2;
+  }
+  .submenu-active .submenu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: left;
+    gap: 0.5rem;
+    background: $astrabeach;
+    padding: 2rem;
+    text-align: left;
+    width: 100%;
+    margin: 5px auto;
+    position: absolute;
+    top: 30px;
+    min-width: 1000px;
+    top: 43px;
+    width: calc(100% - 10rem);
+    left: 50%;
+    transform: translateX(-45%);
+    z-index: 1;
+  }
+  .toggle {
+    display: none;
+  }
+  .submenu-active {
+    border-radius: 0;
+  }
+}
+
+/*--------------------------------------
+          Albums Under Header
+ ----------------------------------*/
+.albumo {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin-top: 4rem;
+}
+
+.album__flex {
+  margin-top: 4rem;
+}
+
+.album__itemright.albumo__item {
+  padding: 0 2rem;
+  line-height: 1.5rem;
+  h3 {
+    margin-bottom: 3rem;
+  }
+}
+.album__itemleft.albumo__item {
+  padding: 0 2rem 0 0;
+  h3 {
+    margin-top: 3rem;
+    margin-bottom: 0.3rem;
+    color: $astrabeach;
+  }
+}
+
+.mejs__mediaelement {
+  background: $nightriderdarkgrey;
+}
+@media screen and (min-width: 1000px) {
+  .album__flex {
+    display: flex;
+  }
+}
+
+.albumo__item {
+  img {
+    width: 400px;
+    display: block;
+    margin: 0 auto 5rem auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  album__itemleft {
+    flex: 0 0 400px;
+    padding: 0 1rem;
+  }
+  album__itemright {
+    flex: 1;
+    padding: 0 1rem;
+  }
+}
+
+.audioplayer__item {
+  display: block;
+  width: 400px;
+  margin: 0 auto 5rem auto;
+}
+
+.mejs__controls,
+.mejs__container {
+  z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  div#mep_0 {
+    width: 300px;
+  }
+  .albumo__item img {
+    width: 300px;
+  }
+  .mejs__controls {
+    width: 300px;
+  }
+}
+
+.album__sociall {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  & a.album__sociala {
+    flex: 1;
+    border: 1px solid white;
+    padding: 1rem;
+    text-align: center;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .album__sociall {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & a.album__sociala {
+      // flex: 0 0 45%;
+      flex: 1 0 300px;
+    }
+  }
+}
+a.credits {
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background-color: $nightriderdarkgrey;
+  &:hover {
+    font-weight: bold;
+  }
+}

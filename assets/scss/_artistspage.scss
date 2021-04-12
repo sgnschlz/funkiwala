@@ -1,0 +1,310 @@
+section.artists__page {
+  margin-top: 0;
+  display: flex;
+}
+blockquote {
+  font-size: 1.2rem;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  section.artists__page {
+    flex-direction: column;
+    .album__itemleft.albumo__item.artists__order2 {
+      order: 2;
+    }
+    .album__itemleft.albumo__item.artists__order1 {
+      order: 1;
+    }
+  }
+}
+
+.container2 {
+  padding-right: 1rem;
+}
+.artists__albums {
+  margin-bottom: 5rem;
+  img {
+    width: 330px;
+    height: 330px;
+  }
+  .flip-box {
+    width: 330px;
+    height: 330px;
+  }
+
+  // https://ishadeed.com/article/aligning-logos-css/
+  .album__lokkhi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .album__item {
+    flex: 0 0 50%;
+  }
+
+  @media (min-width: 700px) {
+    .album__item {
+      flex: 0 0 33.33%;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .album__item {
+      flex: 0 0 25%;
+    }
+  }
+}
+
+.artists__text {
+  margin: 1rem;
+}
+
+img.artistspage__image {
+  float: right;
+  margin: 1rem 3rem 3rem 3rem;
+  width: 500px;
+}
+
+@media screen and (max-width: 900px) {
+  img.artistspage__image {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    width: 400px;
+  }
+}
+
+/////////////////////////////////
+// Image Gallery with Lightbox
+///////////////////////////////////
+.topgallery {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.galleryItem {
+  width: 350px;
+  height: 250px;
+  margin: 10px;
+  border: solid 0px #fff;
+  padding: 0;
+  display: inline-block;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.galleryItem img {
+  width: 350px;
+  height: 250px;
+}
+
+.caption {
+  position: relative;
+  display: inline-block;
+  width: 350px;
+  height: 250px;
+  z-index: 2;
+}
+
+.caption::before {
+  content: attr(data-title);
+  width: 350px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.3);
+  font: bold 1.2em "helvetica neue", helvetica, arial, sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.caption::after {
+  content: attr(data-description);
+  width: 350px;
+  height: 0;
+  position: absolute;
+  bottom: -0;
+  left: 0;
+  color: #fff;
+  background-color: rgba(34, 34, 34, 0.5);
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.caption:hover::before {
+  opacity: 1;
+  height: 25px;
+}
+
+.caption:hover::after {
+  opacity: 1;
+  bottom: 0;
+  height: 65px;
+}
+
+/* lightbox */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.lightbox img {
+  max-height: 85%;
+  max-width: 85%;
+}
+
+.lightbox:target {
+  display: table;
+}
+
+.lightbox .image {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.lightbox .image img {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.next,
+.prev,
+.close {
+  display: block;
+  position: fixed;
+}
+
+.close {
+  width: 5000px;
+  height: 5000px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  cursor: default;
+}
+
+.next,
+.prev {
+  width: 100px;
+  height: 25px;
+  top: 50%;
+  z-index: 10;
+  opacity: 0.7;
+  font-size: 5em;
+  line-height: 25px;
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+
+.prev {
+  left: 10px;
+  text-align: left;
+}
+
+.prev::after {
+  content: "\2039";
+}
+
+.next {
+  right: 10px;
+  text-align: right;
+}
+
+.next::before {
+  content: "\203A";
+}
+
+/////////////////////////////////
+// Videos
+////////////////////////////////
+@media screen and (max-width: 1299px) {
+  .video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .videoWrapper {
+    display: flex;
+  }
+
+  .video {
+    flex: 1;
+    padding: 1rem;
+  }
+}
+
+.videoWrapper {
+  margin-bottom: 4rem;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+img.beiju {
+  width: 250px;
+  height: 324px;
+}
+
+.captionbeiju::before {
+  width: 250px;
+}
+
+.captionbeiju {
+  width: 250px;
+  height: 324px;
+}
+
+.captionbeiju::after {
+  width: 250px;
+}
+
+.shikor {
+  display: block;
+  margin: auto;
+}
+
+.motimba {
+  margin: 5rem;
+}

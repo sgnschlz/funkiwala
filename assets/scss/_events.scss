@@ -1,0 +1,58 @@
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid $nightriderdarkgrey;
+  border-bottom: 1px solid $white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: 1rem;
+  row-gap: 15px;
+  align-items: center;
+  grid-gap: 15px;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    align-items: center;
+  }
+
+  &:hover {
+    border-top: 1px solid $freespeechred;
+  }
+
+  &:first-child:hover {
+    border-top: 0px;
+  }
+  &:last-child {
+    border-bottom: 0px;
+  }
+  &:first-child {
+    border-top: 0px;
+  }
+
+  &__header {
+    color: $freespeechred;
+    font-weight: bold;
+  }
+  &__tickets {
+    color: $freespeechred;
+    background: $white;
+    padding: 1rem;
+    display: grid;
+    white-space: nowrap;
+    justify-items: center;
+    font-weight: bold;
+
+    &:hover {
+      background: $freespeechred;
+      color: $white;
+    }
+  }
+
+  &__itunes {
+    text-transform: uppercase;
+    text-align: center;
+    background: #343434;
+    display: block;
+    padding: 16px;
+  }
+}

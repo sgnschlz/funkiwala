@@ -1,0 +1,48 @@
+.shop {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid $nightriderdarkgrey;
+  border-bottom: 1px solid $white;
+
+      @include breakpoint-down(small) {
+      padding-top: 1rem;
+    }
+
+  &:hover {
+    border-top: 1px solid $freespeechred;
+  }
+  &:last-child {
+    border-bottom: 0px;
+  }
+
+  &__img {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__details {
+    @include breakpoint-down(small) {
+      margin-top: 2rem;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: 300px 1fr;
+      align-items: center;
+      justify-items: start;
+      margin: 1.5rem;
+    }
+
+    @include breakpoint-down(small) {
+      text-align: center;
+    }
+  }
+}

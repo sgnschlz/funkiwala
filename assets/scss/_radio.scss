@@ -1,0 +1,14 @@
+.radio {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include breakpoint-up(large) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.radioa {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+}

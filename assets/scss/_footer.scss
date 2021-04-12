@@ -1,0 +1,188 @@
+/*============================================
+	  Newsletter
+=============================================*/
+input#mce-EMAIL {
+  width: 95%;
+  height: 60px;
+  font-size: 1.3rem;
+  font-family: "Open Sans", sans-serif;
+  background: #c6c6c6;
+  padding: 1rem;
+  border-width: 0px;
+  border: none;
+  outline: 0;
+
+  &:hover {
+    background: $white;
+  }
+
+  @include breakpoint-down(small) {
+    width: 100%;
+    margin: 2rem 1rem 1rem 1rem;
+  }
+}
+
+input#mc-embedded-subscribe {
+  width: 95%;
+  height: 60px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: "Open Sans", sans-serif;
+  background: $nightriderdarkgrey;
+  color: white;
+  cursor: pointer;
+  border-width: 0px;
+  border: none;
+  outline: 0;
+
+  &:hover {
+    background: $freespeechred;
+    color: $lightgrey;
+  }
+
+  @include breakpoint-down(small) {
+    width: 100%;
+    margin: 1rem;
+  }
+}
+
+div#newsletter {
+  margin: auto;
+  @include breakpoint-down(small) {
+    width: 90%;
+  }
+}
+
+.signup__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  @include breakpoint-down(small) {
+    grid-template-columns: 1fr;
+  }
+}
+
+h2.newsletter,
+h2.contactus,
+h2.social {
+  margin: 5rem 0 3rem;
+  padding: 0.7rem;
+  text-align: center;
+  background-color: $nightriderdarkgrey;
+  text-transform: uppercase;
+}
+
+div#mc_embed_signup {
+  width: 70%;
+  margin: 6rem auto;
+}
+
+/*============================================
+	  Contact Us
+=============================================*/
+.contactus__item {
+  width: 70%;
+  margin: 0 auto;
+}
+
+input#name,
+textarea#message,
+input#email,
+button#submit-btn {
+  padding: 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  width: 100%;
+  margin: 1rem 0;
+  border-width: 0px;
+  border: none;
+  outline: 0;
+  background: #c6c6c6;
+
+  &:hover {
+    background: $white;
+  }
+}
+
+button#submit-btn {
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #343434;
+  color: white;
+}
+
+  button#submit-btn:hover {
+
+  background: #cc1313;
+  color: white;
+}
+
+/*============================================
+	  Social
+=============================================*/
+.social__item {
+  width: 90%;
+  margin: 150px auto;
+}
+
+ul.social {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 1.875rem;
+  padding-left: 0;
+
+  @include breakpoint-up(medium) {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  .lisocial {
+    background: $astrabeach;
+    width: 100%;
+    & a {
+      color: black;
+      text-align: center;
+      display: block;
+      padding: 1rem;
+
+      .fab {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+ul.social .lisocial a:hover {
+  color: white;
+  background: $flamered;
+}
+
+ul.social .lisocial:hover {
+  color: white;
+  background: $flamered;
+}
+
+.lisocial:hover a {
+  color: white;
+  background: $flamered;
+}
+.lisocial:hover .fa {
+  color: white;
+  background: $flamered;
+}
+
+.about__container {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+.alert.alert-success {
+  font-size: 1rem;
+  color: $astrabeach;
+}
